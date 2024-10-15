@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>บันทึกเช็คชื่อ</title>
+</head>
+<body>
+    <h1>บันทึกเช็คชื่อ</h1>
+    <table border="1">
+        <tr>
+            <th>ชื่อ</th>
+            <th>วันที่</th>
+            <th>สถานะ</th>
+        </tr>
+        <% records.forEach(record => { %>
+        <tr>
+            <td><%= record.name %></td>
+            <td><%= record.date.toISOString().split('T')[0] %></td>
+            <td><%= record.status ? 'เข้าชม' : 'ไม่เข้าชม' %></td>
+        </tr>
+        <% }) %>
+    </table>
+    <a href="/">กลับ</a>
+</body>
+</html>
